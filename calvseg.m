@@ -12,14 +12,5 @@ for i = 1:imht
         end
     end
 end
-for i = 2:(imht-1)
-    for j = 2:(imwd-1)
-        if (imseg(i,j+1)<imseg(i,j))
-            imseg(i,j) = imseg(i,j+1);
-        end
-        %if (imseg(i,j-1)<imseg(i,j))
-        %    imseg(i,j) = imseg(i,j-1);
-        %end
-    end
-end
+
 end

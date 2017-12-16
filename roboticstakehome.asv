@@ -12,10 +12,10 @@ G = fspecial('gaussian',[3 3],2); %create 3x3 gaussian blur kernel
 blurpens= imfilter(medpens,G,'same'); %filters image with gaussian blur(best to use before threhsolding
 imshow(blurpens)
 %% Threshold the image
-threshpens = calvthresh(blurpens,128);
+threshpens = calvthresh(blurpens,124);
 imshow(threshpens)
 %Morphological filtering
-se = strel('square',5); %creates a 5x5 kernel for morph. filtering
+se = strel('square',7); %creates a 5x5 kernel for morph. filtering
 erodedpens = imerode(threshpens,se); %erodes image (best to use afterthresholding)
 dilatedpens = imdilate(erodedpens,se); %dilates image (best to use afterthresholding)
 imshow(dilatedpens) %displays the image. imscale(dilatedpens) will beuseful if you have images with pixel values outside the standard range, suchas very large numbers after your semgmentation labeling.
